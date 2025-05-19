@@ -5,7 +5,7 @@ a = Analysis(
     ['app/windows/ImageToPdf.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('app\windows\image_to_pdf.ico', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

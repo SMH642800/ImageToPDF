@@ -225,7 +225,7 @@ if __name__ == "__main__":
     else:
         app_dir = os.path.dirname(os.path.abspath(__file__))
     ico_path = os.path.join(app_dir, "image_to_pdf.ico")
-    window. setWindowIcon(QIcon(ico_path))
+    window.setWindowIcon(QIcon(ico_path))
 
     window.show()
     app.exec()
