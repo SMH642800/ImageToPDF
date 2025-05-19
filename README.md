@@ -1,7 +1,7 @@
 # ImageToPDF
 
 ## About
-An app which combines multiple Images to one Pdf file by using Python.
+An app which combines multiple Images to one single PDF file by using Python.
 
 ## 🚀 Features
 - 📁 Batch Process Subfolders: Automatically scans each subfolder and creates a separate PDF for each.
@@ -22,9 +22,19 @@ An app which combines multiple Images to one Pdf file by using Python.
 - Ensure images are in common formats like PNG or JPG and are sorted by filename.
 - If conversion fails, double-check the folder structure and image formats.
 
-⸻
+## ⚠ macOS Gatekeeper Notice
+- This app is not signed or notarized, so macOS may block it the first time you open it.
 
-If you encounter any issues or have suggestions, feel free to submit an issue or contribute to the project 🙌
+## 🚧 How to Open the App:
+- If you see a message saying the app “can’t be opened because it is from an unidentified developer,” follow these steps:
+	1.	Go to System Settings > Privacy & Security
+	2.	Scroll down to the section that says: “ImageToPDF was blocked from use because it is not from an identified developer”
+	3.	Click the “Open Anyway” button
+	4.	A confirmation dialog will appear – click “Open” again
+
+- You only need to do this once. Afterward, the app will launch normally.
+
+---
 
 ## Python Versions
 Compatible Python version: >=3.13, <3.14
