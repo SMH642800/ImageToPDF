@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog,
@@ -161,6 +162,11 @@ class PDFConverter(QWidget):
         left_margin = int(self.margins["左"].value() * MM_TO_PX)
         right_margin = int(self.margins["右"].value() * MM_TO_PX)
 
+        def natural_key(s):
+            return [int(text) if text.isdigit() else text.lower()
+                    for text in re.split(r'(\d+)', s)]
+        
+        subfolders = sorted(subfolders, key=natural_key)
         for idx, sub in enumerate(subfolders):
             if self.cancelled:
                 break
@@ -173,7 +179,7 @@ class PDFConverter(QWidget):
                 os.path.join(subfolder_path, f)
                 for f in os.listdir(subfolder_path)
                 if f.lower().endswith(SUPPORTED_FORMATS)
-            ])
+            ], key=lambda x: natural_key(os.path.basename(x)))  # 使用自然排序
 
             if not images:
                 self.log("⚠️ 無圖片，跳過")
