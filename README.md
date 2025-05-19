@@ -16,6 +16,8 @@ An app which combines multiple Images to one Pdf file by using Python.
 |------------------------|-------------------------|
 | [Portable ZIP][latest] | [DMG Installer][latest] |
 
+[latest]: https://github.com/SMH642800/ImageToPDF/releases/latest
+
 ## 📝 Notes
 - Ensure images are in common formats like PNG or JPG and are sorted by filename.
 - If conversion fails, double-check the folder structure and image formats.
