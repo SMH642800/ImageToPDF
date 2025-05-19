@@ -12,7 +12,7 @@ An app which combines multiple Images to one Pdf file by using Python.
 
 ## 📦 Installation
 
-| Windows                | macOS (ARM64)           |
+| Windows (X86)          | macOS (ARM64)           |
 |------------------------|-------------------------|
 | [Portable ZIP][latest] | [DMG Installer][latest] |
 
