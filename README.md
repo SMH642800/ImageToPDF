@@ -21,6 +21,24 @@ An app which combines multiple Images to one single PDF file by using Python.
 ## 📝 Notes
 - Ensure images are in common formats like PNG or JPG and are sorted by filename.
 - If conversion fails, double-check the folder structure and image formats.
+  ```bash
+  # Data structure tree
+  main folder/
+  |
+  ---- sub_folder1/
+  |	|_image01.jpg
+  |	|_image02.jpg
+  |		.
+  |		.
+  |		.
+  |
+  ---- sub_folder2/
+  	|_image01.jpg
+  	|_image02.jpg
+  		.
+  		.
+  		.
+  ```
 
 ## ⚠ macOS Gatekeeper Notice
 - This app is not signed or notarized, so macOS may block it the first time you open it.
