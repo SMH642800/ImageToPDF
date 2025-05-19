@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='ImageToPdf',
+    name='ImageToPDF',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -39,7 +39,7 @@ exe = EXE(
 )
 app = BUNDLE(
     exe,
-    name='ImageToPdf.app',
+    name='ImageToPDF.app',
     icon='app/windows/image_to_pdf.ico',
     bundle_identifier=None,
 )

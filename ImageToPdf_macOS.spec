@@ -19,23 +19,20 @@ pyz = PYZ(a.pure)
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
-    a.datas,
     [],
-    name='ImageToPdf',
+    exclude_binaries=True,
+    name='ImageToPDF',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    upx_exclude=[],
-    runtime_tmpdir=None,
     console=False,
-    icon='app/macOS/image_to_pdf.icns',
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon=['app/macOS/image_to_pdf.icns'],
 )
 coll = COLLECT(
     exe,
@@ -44,11 +41,11 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='ImageToPdf',
+    name='ImageToPDF',
 )
 app = BUNDLE(
-    exe,
-    name='ImageToPdf.app',
+    coll,
+    name='ImageToPDF.app',
     icon='app/macOS/image_to_pdf.icns',
     bundle_identifier=None,
 )
