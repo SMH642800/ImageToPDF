@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['ImageToPdf.py'],
+    ['app/macOS/ImageToPdf.py'],
     pathex=[],
     binaries=[],
     datas=[],
@@ -30,15 +30,25 @@ exe = EXE(
     upx_exclude=[],
     runtime_tmpdir=None,
     console=False,
+    icon='app/macOS/image_to_pdf.icns',
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
 )
+coll = COLLECT(
+    exe,
+    a.binaries,
+    a.datas,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    name='ImageToPdf',
+)
 app = BUNDLE(
     exe,
     name='ImageToPdf.app',
-    icon=None,
+    icon='app/macOS/image_to_pdf.icns',
     bundle_identifier=None,
 )

@@ -1,11 +1,12 @@
 import os
+import sys
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog,
     QLabel, QProgressBar, QSpinBox, QHBoxLayout, QMessageBox,
     QTextEdit, QCheckBox, QLineEdit
 )
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QDragEnterEvent, QDropEvent
+from PyQt6.QtGui import QDragEnterEvent, QDropEvent, QIcon
 from PIL import Image
 import img2pdf
 
@@ -18,7 +19,7 @@ class PDFConverter(QWidget):
         super().__init__()
         self.setAcceptDrops(True)
         self.setWindowTitle("Image To PDF tools")
-        self.resize(650, 600)
+        self.resize(450, 500)
 
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
@@ -218,5 +219,13 @@ class PDFConverter(QWidget):
 if __name__ == "__main__":
     app = QApplication([])
     window = PDFConverter()
+    
+    if getattr(sys, 'frozen', False):
+        app_dir = sys._MEIPASS
+    else:
+        app_dir = os.path.dirname(os.path.abspath(__file__))
+    ico_path = os.path.join(app_dir, "image_to_pdf.ico")
+    window. setWindowIcon(QIcon(ico_path))
+
     window.show()
     app.exec()
